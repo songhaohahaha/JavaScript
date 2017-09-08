@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+// *号
+
+	for(var x=1;x<8;x++){
+		for(var y = 1;y<=x;y++){
+			document.write('*'+'&nbsp;');
+		}
+		document.write('<br/>')
+	}
+
+// 九九乘法表
+	document.write('<table border=1>');
+	var f = prompt('请输入九九乘法表的行数',10)*1;
+	for(var i = 1;i<f;i++){
+		document.write('<tr>');
+		for(var j= 1;j<i;j++){
+			document.write('<td>'+j+'*'+i+'='+(j*i)+'</td>');
+		}
+		document.write('</tr>');
+	}
+	document.write('</table>');
+
+
+// 九九乘法表 隔行换色
+	document.write('<table >');
+	var n = prompt('请输入九九隔行换色乘法表的行数',10)*1;
+	for(var i = 1;i<n;i++){
+		if(i%2==0){
+			document.write('<tr style="background:yellow;">');
+		}else{
+			document.write('<tr style="background:pink;">');
+		}
+		for(var j= 1;j<=i;j++){
+			document.write('<td>'+j+'*'+i+'='+(j*i)+'</td>');
+		}
+		document.write('</tr>');
+	}
+	document.write('</table>');
+
+
+// 九九乘法表 隔列换色
+	document.write('<table>');
+	var v = prompt('请输入九九隔列换色乘法表的行数',10)*1;
+	for(var i = 1;i<v;i++){
+		document.write('<tr>');
+		for(var j= 1;j<=i;j++){
+			if(j%2==0){
+				document.write('<td style="background:skyblue">'+j+'*'+i+'='+(j*i)+'</td>');
+			}else{
+				document.write('<td style="background:purple">'+j+'*'+i+'='+(j*i)+'</td>');
+			}
+		}
+		document.write('</tr>');
+	}
+	document.write('</table>');
+
+
+	// 1 1 2 3 5 8 13 21
+</script>
+</body>
+</html>
