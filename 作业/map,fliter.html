@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 数组中的数组元素连接
+	
+	// function connect(arr,str){
+	// 	if(!(typeof arr == 'object' && arguments.length > 1)){
+	// 		return '输入错误';
+	// 	}
+	// 	str = str == undefined ? '-' : str;
+	// 	var result = '';
+	// 	for(var i = 0; i<arr.length;i++){
+	// 		if(i<arr.length-1){
+	// 			result += arr[i] + str;
+	// 		}else{
+	// 			result +=  arr[i];
+	// 		}
+	// 	}
+	// 	console.log(result);
+	// 	return result;
+	// }
+	// var arr1 = [12,99,85,2,15]
+	// connect(arr1,'+');
+
+
+
+	// 数组中的偶数提取
+	
+	// function filter(arr){
+	// 	var newarr = [];
+	// 	for(i=0;i<arr.length;i++){
+	// 		if(arr[i]%2==0){
+	// 			newarr[newarr.length] = arr[i];
+	// 		}
+	// 	}
+	// 	console.log(newarr);
+	// 	return newarr;
+	// }
+	// filter(arr1);
+	
+	
+	// 计算
+
+	
+	// function aa(num1,num2){
+	// 	return num1*2+num2;
+	// }
+
+	// function bb(num1,num2){
+	// 	return num1 + num2;
+	// }
+	// function cc(num1,num2){
+	// 	return num1 * num2;
+	// }
+	// function math(num1,num2,fn){
+	// 	return fn(num1,num2);
+	// }
+	// math(5,2,cc);
+	// var result = math (5,2,cc);
+	// console.log(result);
+
+
+	</script>
+	<script>
+
+	
+		// 映射
+		
+		var arr1 = [1,2,345,67,89];
+
+		function map(arr,fn){
+			var newarr = [];
+			for(var i = 0; i<arr.length;i++){
+				newarr[newarr.length] = fn(arr[i]);
+			}
+			return newarr;
+		}
+		
+		var result = map(arr1,function(value){
+			return value/2;
+		})
+		console.log(result);
+
+
+
+		// 筛选
+		
+		var arr2 = [87,65,4,3];
+		function shaixuan(arr,fn){
+			var newarr = [];
+			for(var i = 0; i<arr.length;i++){
+				if(fn(arr[i])){
+					newarr[newarr.length] = arr[i];
+				}
+			}
+			return newarr;
+		}
+		var result1 = shaixuan(arr2,function(value){
+			return value%2==1;
+		})
+
+		console.log(result1);
+
+	</script>
+</body>
+</html>
