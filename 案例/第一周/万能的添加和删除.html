@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 万能的删除
+		
+		function spliceCancel(arr,pos,num){
+			var newarr = [];
+			for(var i=0;i<arr.length;i++){
+
+				if(i>= pos && i < pos+num){
+					continue;
+				}
+
+				newarr[newarr.length]=arr[i]
+			}
+			return newarr;
+		}
+
+		var arr1 = [4,5,6,7,8,9,0];
+
+		var re = splice(arr1,2,2);
+
+		alert(re);
+
+
+
+		// 万能的添加
+		function spliceAdd(arr,pos,...rest){
+
+			var newarr= [];
+
+			for(var i = 0;i<pos;i++){
+
+				newarr[newarr.length] = arr[i];
+
+			}
+
+			for(var i = 0;i<rest.length;i++){
+
+				newarr[newarr.length] = rest[i];
+
+			}
+
+			for(var i = pos;i<arr.length;i++){
+
+				newarr[newarr.length] = arr[i];
+			}
+
+			return newarr;
+		}
+		// 添加和删除
+		
+
+		var arr1 = [1,2,3,4,5,6,7,8,9,0];
+
+		var re = spliceAdd(arr1,2,'x','y','z','x');
+
+		alert(re);
+
+		function splice(arr,pos,num,...rest){
+			var newarr = spliceCancel(arr,pos,num);
+			if(rest.length>0){
+				newarr = spliceAdd(arr,pos,...rest);
+			}
+			return newarr;
+		}
+		
+	</script>
+</body>
+</html>

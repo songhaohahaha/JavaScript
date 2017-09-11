@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+// 			任意行列的表格。
+	function myFunction(x,y){
+		var table = "<table border=1 cellspacing=0>";
+			var x,y;
+			for(var i = 1;i<=x;i++){
+			table += '<tr>';
+				for(var j = 1;j<=y;j++){
+					table += '<td>'+i+'*'+j+'='+i*j+'</td>';
+				}
+			table += '</tr>';
+			document.write('<br/>');
+		}
+		document.write(table);
+	}
+</script>
+</body>
+</html>

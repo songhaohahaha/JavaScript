@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	<script>	
+
+
+		// 数组后面添加任意个数组元素；
+		// function push(arr){
+		// 	for(var i = 1; i<arguments.length;i++){
+		// 		arr[arr.length] = arguments[i];
+		// 	}
+		// 	console.log(arr);
+		// }
+		// var x = [12,34,5,67];
+		// push(x,'a','b',1,2);
+
+
+
+		// 将数组元素 从小到大排序
+		function sortUp(arr1){
+			for(var i=0;i<arr1.length;i++){
+				for(var j = i+1;j<arr1.length;j++){
+					if(arr1[i]>arr1[j]){
+						var temp = arr1[i];
+						arr1[i] = arr1[j];
+						arr1[j] = temp;
+					}
+				}
+			}
+			console.log(arr1);
+		}
+		function sortDown(arr1){
+			for(var i=0;i<arr1.length;i++){
+				for(var j = i+1;j<arr1.length;j++){
+					if(arr1[i]<arr1[j]){
+						var temp = arr1[i];
+						arr1[i] = arr1[j];
+						arr1[j] = temp;
+					}
+				}
+			}
+			console.log(arr1);
+		}
+		var arr = [8,9,5,44,33,15,1,0];
+		function sort(arr1,type){
+			type = type == undefined ? '<' : type;
+			if(type == '<'){
+				sortUp(arr1);
+			}else if(type == '>'){
+				sortDown(arr1);
+			}
+		}
+		sort(arr,'>');
+
+
+	</script>
+</body>
+</html>

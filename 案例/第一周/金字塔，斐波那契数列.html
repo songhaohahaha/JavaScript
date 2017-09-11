@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+
+// 表格拼接
+	// var table = "<table border=1 cellspacing=0>";
+	// for(var i = 1;i<=10;i++){
+	// 	table += '<tr>';
+	// 		for(var j = 1;j<=10;j++){
+	// 			table += '<td>'+i+'*'+j+'='+i*j+'</td>';
+	// 		}
+	// 	table += '</tr>';
+	// 	document.write('<br/>')
+	// }
+	// document.write(table);
+
+
+
+// 金字塔  空格数 rows-x; *数 2x-1;
+// 	var rows = prompt('请输入金字塔行数',8);
+// 	for(var x = 1;x<=rows;x++){
+// 		for(var y = 1;y<=rows-x;y++){
+// 			document.write('-');
+// 		}
+// 		for(var z= 1;z<=2*x-1;z++){
+// 			document.write('*');
+// 		}
+// 		document.write('<br/>');
+// 	}
+
+
+// 1 1 2 3 5 8 13 21  斐波那契数列
+	// var a =1,b=1;
+	// document.write(1+'&nbsp');
+	// document.write(1+'&nbsp');
+	// for(var c=0;c<=100;){
+	// 	c = a + b;
+	// 	document.write(c+'&nbsp');
+	// 	a = b;
+	// 	b = c;
+	// }
+	
+	var arr = [1,2,3,6,7,8,9];
+	var max = arr[0];
+	for(var i=0;i<arr.length;i++){
+		if(max<arr[i]){
+			max = arr[i];
+		}
+	}
+	alert('最大值为'+max);
+
+
+	// var min = arr[0];
+	// for(var i=0;i<arr.length;i++){
+	// 	if(min>arr[i]){
+	// 		min = arr[i];
+	// 	}
+	// }
+	// alert('最小值为'+min); 
+
+ 	var arr = [20,89,77,95,33,21,8];
+	for(var i = 0; i<arr.length;i++){
+		for(var j = i+1; j<arr.length;j++){
+			if(arr[i]<arr[j]){
+				var temp = arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+
+		}
+	}
+	alert('从大到小：'+arr);
+
+ 	var arr = [20,89,77,95,33,21,8];
+	for(var i = 0; i<arr.length;i++){
+		for(var j = i+1; j<arr.length;j++){
+			if(arr[i]>arr[j]){
+				var temp = arr[i];
+				arr[i]=arr[j];
+				arr[j]=temp;
+			}
+
+		}
+	}
+	alert('从小到大：'+arr);
+</script>
+</body>
+</html>

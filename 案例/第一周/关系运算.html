@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 	<h1 id="id1">My Heading 1</h1>
+	<button type="button" onclick="document.getElementById('id1').style.color='red'">
+	点击这里
+	</button>
+	<div id="div1">
+		<p id="p1">这是一个段落</p>
+		<p id="p2">这是又一个段落</p>
+	</div>
+<script>
+	var para = document.createElement('p');
+	var node = document.createTextNode('这是新段落');
+	para.appendChild(node);
+
+	var element = document.getElementById('div1');
+	element.appendChild(para);
+
+	var parent = document.getElementById('div1');
+	var child = document.getElementById('p1');
+	parent.removeChild(child);
+</script> -->
+</body>
+</html>	
+<!-- 	<script>
+		// var num = '宋浩';
+		// var num1 = '奥巴马';
+		// alert( num > num1 );
+		
+
+		// var num1 = '奥巴马';
+		// var num2 = '奥利奥';
+		// alert(num1>num2);
+		// var a = `asef1
+		// 无\b法
+		// 安\\抚
+		// 2\n1是 `
+		// alert(a);
+		// var num3 = '特朗普';
+		// var num4 = '习近平';
+		// alert(num3 < num4);
+
+		// var x = 5 ;
+		// x *= 3 ;
+		// alert(x);
+		// x +=  8;
+		// alert(x);
+		// alert(x == 23);
+		// alert(x === 23);
+
+		// alert( undefined == null);
+		// alert(0b11111 < 0x12346);
+
+		// function func(){
+		// 	for(var i=1; i<8;i++){
+		// 		alert('*');
+		// 	}
+		// 	document.write('<br/>');
+		// }
+		// func();
+
+
+		// var x = '宋浩';
+		// var y = '奥巴马';
+		// if(x>y){
+		// 	document.write('哈哈哈');
+		// }else{
+		// 	document.write('略略略');
+		// }
+		// var i = 1;
+		// while(i<5){
+		// 	alert('888888');
+		// 	i++;
+		// }
+		// do{
+		// 	alert('ahahahahah');
+		// 	i++;
+		// }
+		// while(i<1 	);
+		
+
+		// var num = 10;
+		// flag = num%2==0 ? 888 : 666;
+		// alert(flag)
+
+		// var num = 11;
+		// var flag;
+		// if (num%2==0) {
+		// 	flag = true;
+		// }else{
+		// 	flag = false;
+		// }
+		// alert(flag)
+
+	</script> -->
+<!-- 	<script>
+	//  成绩 90-100优秀 80-90良好  70-80凑乎 60-70及格 60以下垃圾 填错的傻。
+		
+		
+		var score = prompt('请输入成绩',101);
+
+
+		if(score >= 90 && score <=100){ 
+			alert('优秀');
+		}else if(score >=80 && score <90){
+			alert('良好');
+		}else if(score >=70 && score <80){
+			alert('凑乎');
+		}else if(score >=60 && score <70){
+			alert('及格');
+		}else if(score >=0 && score <60){
+			alert('垃圾');
+		}else{
+			alert('你咋不上天了');
+		}
+	</script> -->
+<!-- 	<script>
+
+		// 值日分组
+		 
+		var week = prompt('请输入星期', 1)*1;
+		switch(week){
+			case 1 :
+				alert('第一组值日');
+				break;
+			case 2 :
+				alert('第二组值日');
+				break;
+			case 3 :
+				alert('第三组值日');
+				break;
+			case 4 :
+				alert('第四组值日');
+				break;
+			case 5 :
+				alert('第五组值日');
+				break;
+			case 6 :
+				alert('第六组值日');
+				break;
+			case 7 :
+				alert('第七组值日');
+				break;
+			default :
+				alert('输了个p啊');
+		}
+	</script> -->
+<script>
+	// 1-10求和  任意范围求和    奇数、偶数
+	// var sum = 0;
+	// for(var i = 1;i<=10;i++){
+	// 	sum += i;
+	// }
+	// alert(sum);
+
+	// var sum = 0;
+	// var i = prompt('请输入第一个值',1)*1;
+	// var j = prompt('请输入最后一个值',10)*1;
+	// for(i;i<=j;i++){
+	// 	sum += i;
+	// }
+	// alert(sum);
+
+
+	// 偶数和,奇数和
+
+	var sum = 0;
+	var i = prompt('请输入第一个值',1)*1;
+	var j = prompt('请输入最后一个值',1000)*1;
+	if(i%2==0){
+		for(i;i<=j;i+=2){
+			sum += i;
+		}
+		alert('偶数和为：'+sum);
+	}else{
+		for(i;i<=j;i+=2){
+			sum += i;
+		}
+		alert('奇数和为：'+sum); 
+	}
+</script>

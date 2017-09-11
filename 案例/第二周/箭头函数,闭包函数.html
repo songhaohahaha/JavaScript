@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+	// 闭包
+		function fn(){
+			var num = 10;
+			return fn1;
+			function fn1(){
+				num++;
+				alert(num);
+			}
+		}
+	// 箭头函数
+		var fn = a => a;
+		var re = fn('sr');
+		alert(re);
+		// 结合回调
+		var huidiao = map(arr,(a)=>a)
+		alert(huidiao);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
