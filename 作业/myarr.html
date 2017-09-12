@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	let arr = new myArray(12,34,56,7)
+	console.log(arr)
+	var re = arr.indexof();
+	alert(re)
+	arr.join('+');
+	arr.sort('>');
+	console.log(arr)
+	arr.some(function(value){
+		return value>0;
+	})
+	arr.every(function(value){
+		return value>0;
+	})
+	arr.map(function(value){
+		return value*2
+	})
+	arr.filter(function(value){
+		return value>0
+	})
+	function myArray(){
+		for(let i=0;i<arguments.length;i++){
+			this[i] = arguments[i];
+		}
+		this.length = arguments.length;
+		// push
+		this.push=function(){
+			for(let i=0;i<this.length;i++){
+				this[i] = arguments[i];
+			}
+		}
+		// indexof 判断这个数的第一个位置
+		this.indexof = function(x){
+			for(let i = 0;i<this.length;i++){
+				if(this[i] == x){
+						return i;
+					}
+				}
+			return -1;
+		}
+		// lastIndexOf最后位置
+		this.lastIndexOf = function(x){
+			for(let i = this.length-1;i>=0;i--){
+				if(this[i]==x){
+					return i;
+				}
+			}
+			return -1;
+		}
+		// includes
+		this.includes = function(x){
+			for(let i = 0;i<this.length;i++){
+				if(this[i]==x){
+					return true;
+				}
+
+			}
+			return false;
+		}
+		// reverse
+		this.revserse = function(){
+			let newarr = [];
+			for(let i = this.length-1;i>=0;i--){
+				newarr[newarr.length] = this[i];
+			}
+		}
+		// join
+		this.join = function(str){
+			let result = '';
+			for(let i=0;i<this.length;i++){
+				if(i<this.length-1){
+					result += this[i]+str
+				}else{
+					result += this[i]
+				}
+			}
+			console.log(result)
+		}
+		// sort 
+		this.sort = function(value){
+			if(value == '>'){
+				for(let i=0;i<this.length;i++){
+					for(let j = i+1;j<this.length;j++){
+						if(this[i]>this[j]){
+							let temp = this[i];
+							this[i] = this[j];
+							this[j] = temp;
+						}
+					}
+				}
+			}else if(value == "<"){
+				for(let i=0;i<this.length;i++){
+					for(let j = i+1;j<this.length;j++){
+						if(this[i]<this[j]){
+							let temp = this[i];
+							this[i] = this[j];
+							this[j] = temp;
+						}
+					}
+				}
+			}
+		}
+		// some
+		this.some = function(fn){
+			for(let i =0;i<this.length;i++){
+				if(fn(this[i])){
+					return true;
+				}
+			}
+			return false;
+		}
+		// every
+		this.every = function(fn){
+			for(let i=0;i<this.length;i++){
+				if(!fn(this[i])){
+					return false;
+				}
+			}
+			return true;
+		}
+		// map
+		this.map = function(fn){
+			let newarr = [];
+
+			for(let i=0;i<this.length;i++){
+				newarr[newarr.length] = fn(this[i])
+			}
+			return newarr;
+		}
+		// filter
+		this.filter = function(fn){
+			let newarr = [];
+			for(let i=0;i<this.length;i++){
+				if(fn(this[i])){
+					newarr[newarr.length] = this[i];
+				}
+			}
+		}
+	}
+</script>
+<body>
+	
+</body>
+</html>
