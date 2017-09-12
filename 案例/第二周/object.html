@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	// function Person(){
+		
+	// }
+	// let huangbowei = new Person();
+	// huangbowei.age = 80;
+	// huangbowei.name = 'erha';
+	// huangbowei.tedian = '丑';
+	// huangbowei.aihao = '人妖';
+	// huangbowei.sanwei = '30,100,100';
+	// alert(huangbowei.age);
+	// console.log(huangbowei);
+	// 
+	// 
+	// 
+	// function Iphone(){
+	// 	this.system = 'saipan';
+	// 	this.brand = 'iphone';
+	// 	this.cpu = 'A11';
+	// 	this.screen = 'OLED';
+	// 	this.size = '5.8';
+	// 	this.siri = function(){
+	// 		alert('haha，我是siri方法里面的moblie，类里面的，特点方法')	
+	// 	}
+	// }
+	// let Iphone8 = new Iphone();
+	// console.log(Iphone8);
+	// alert(Iphone8.siri())
+
+	// let computer = {
+	// 	"sysyem" : 'windows',
+	// 	"name" : 'lenovo',
+	// 	"battery" : '20000mAh',
+	// 	"processor" : 'CORE i5',
+	// 	kernel:function(){
+	// 		alert('16核');
+	// 	},
+	// 	browser:function(){
+	// 		for(let i =0;i<10;i++){
+	// 			haha();
+	// 			function haha(){
+	// 				alert('略略略❤')
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// console.log(computer)
+	// // computer.kernel();
+	// alert(computer.browser());
+
+// 用类定义函数
+	// class computer{
+	// 	constructor(){
+	// 		this.name = 'lenove';
+	// 		this.age = 18;
+	// 	}
+		
+	// 	say(){
+	// 		alert('123')
+		
+	// 	}
+	// }
+	// let computer1 = new computer;
+	// console.log(computer1);
+	
+	
+	// computer1.say();
+	//遍历对象
+	// for(let i in computer1){
+	// 	console.log(`${i}---${computer1[i]}`);
+	// }
+	function Cup(size,name,color){
+		this.size = size;
+		this.name = name;
+		this.color = color;
+		this.feature = function(value){
+			alert(value);
+		}
+		this.brand = function (){
+			alert(this.name)
+		}
+	}
+	let suliao = new Cup(10,'taizhou','red');
+	console.log(suliao);
+	suliao.feature('haha');
+</script>
+<body>
+	
+</body>
+</html>
