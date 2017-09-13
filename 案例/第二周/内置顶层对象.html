@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// let str1 = 'vbasuiabfi'
+	// let char = str.charCodeAt(1);
+	// let str1 = String.fromCharCode(97);
+	// console.log(str1);
+	
+
+
+// 替换
+	function replaceAll(str,rStr){
+		// let star = ''
+		// for(let i=0;i<rStr.length;i++){
+		// 	star+='*'
+		// }
+		let star = '*'.repeat(rStr.length);
+		while(str.includes(rStr)){
+			str = str.replace(rStr,star);
+		}
+		return str;
+	}
+	// let re = replaceAll(str1,'a');
+	// console.log(re);
+
+	let url = 'https://www.baidu.comhttps://www.baidu.comhttps://www.baidu.com';
+	// function index(str,rStr){
+	// 	let star = '*'.repeat(rStr.length);
+	// 	let newarr = [];
+	// 	while(str.includes(rStr)){
+	// 		let re = str.indexOf(rStr);
+	// 		str = str.replace(rStr,star);
+	// 		newarr[newarr.length] = re;
+	// 	}
+	// 	return newarr;
+	// }
+	// 
+
+
+	function jie(str,rStr){
+		let arr = [];
+		for(let i = 0;i<str.length;i++){
+			if(str.slice(i,i+5) == rStr){
+			 arr[arr.length] = i;
+			}
+		} 
+		return arr;
+	}
+	let re = jie(url,'baidu');
+	console.log(re)
+</script>
+</body>
+</html>

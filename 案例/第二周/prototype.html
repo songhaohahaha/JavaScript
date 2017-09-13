@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function Person(){
+		this.name = 'jaja'
+		prototype ={
+
+		}
+	}
+	Person.prototype = {
+		say:function(){
+			alert('哈哈，我是人')
+		}
+	}
+	Person.prototype.eat = function(){			
+  		alert('eat')
+  	}
+  	function Student(){
+  		prototype = {
+
+  		}
+  	}
+  	Student.prototype = new Person();
+  	Student.prototype.play = function(){
+  		alert('哈哈，我是学生')
+  	}
+  	let lisi = new Student();
+	let zhangsan = new Per son();
+	zhangsan.say();
+	lisi.play();
+	delete lisi.name;
+	console.log(lisi)
+	console.log(zhangsan instanceof Person)
+
+	
+</script>
+<body>
+	
+</body>
+</html>
