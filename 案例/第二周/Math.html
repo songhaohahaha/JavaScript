@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [3,4,5,6,7,8,9]
+		// 随机取三个数
+		// function random1(arr){
+		// 	let newarr=[];
+		// 	for(let i=0;i<3;i++){
+		// 		newarr[newarr.length] = arr[(Math.floor(Math.random()*arr.length))]
+		// 	}
+		// 	return newarr;
+		// }
+		// let re = random1(arr);
+		// alert(re);
+
+
+		// 随机取三个不重复的数   while方法
+		function random2(arr,num){
+			let newarr = [];
+			for(let i=0;i<num;i++){
+				let str = Math.floor(Math.random()*arr.length);
+				// if(!newarr.includes(arr[str])){
+				// 	newarr.push(arr[str]);
+				// }else{
+				// 	i--;
+				// }
+				while(newarr.includes(arr[str])){
+					str = Math.floor(Math.random()*arr.length);
+				}
+				newarr.push(arr[str]);
+			}
+			return newarr;
+		}
+		// 随机取三个不重复的数   if方法
+		function random3(arr,num){
+			let newarr = [];
+			for(let i=0;i<num;i++){
+				let str = Math.floor(Math.random()*arr.length);
+				if(!newarr.includes(arr[str ])){
+					newarr.push(arr[str]);
+				}else{
+					i--;
+				}	
+			}
+			return newarr;
+		}
+		let re = random2(arr,3);
+		console.log(re);
+	</script>
+</body>
+</html>

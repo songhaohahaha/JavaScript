@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	// 去重复	第一种
+
+	let arr = [1,2,3,4,5,6,1,2,3,4];
+
+	// function DelRep(arr){
+	// 	let newarr = [];
+	// 	for(let i=0;i<arr.length;i++){
+	// 		if(!newarr.includes(arr[i])){
+	// 			newarr.push(arr[i]);
+	// 		}
+	// 	}
+	// 	return newarr;
+	// }
+	// let re = DelRep(arr);
+	// alert(re)
+
+
+	
+	//去重复  第二种
+	function DelRep1(arr){
+		let newarr = [];
+		for(let i=0;i<arr.length;i++){
+			let flag =true;
+			for(let j=i+1;j<arr.length;j++){
+				if(arr[i]==arr[j]){
+					flag = false;
+					break;
+				}
+			}
+			if(flag){
+				newarr.push(arr[i]);
+			}
+		}
+		return newarr;
+	}
+
+
+// 给构造函数的原型对象添加一个方法
+
+	Array.prototype.DelRep1 = function(){
+		let newarr = [];
+		for(let i=0;i<this.length;i++){
+			let flag =true;
+			for(let j=i+1;j<this.length;j++){
+				if(this[i]==this[j]){
+					flag = false;
+					break;
+				}
+			}
+			if(flag){
+				newarr.push(this[i]);
+			}
+		}
+		return newarr;
+	}
+	
+	let re = arr.DelRep1();
+	alert(re);
+</script>
+<body>
+
+</body>
+</html>
