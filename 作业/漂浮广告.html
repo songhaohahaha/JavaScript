@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 300px;
+			height: 200px;
+			background: orange;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#close{
+			width: 50px;
+			height: 20px;
+			background: black;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var close = document.getElementById("close")
+			// 获得可视区域的宽高
+						
+			var win_height = document.documentElement.clientHeight;
+			var win_width = document.documentElement.clientWidth;
+			// 计算可以到达的最大top和left值；		
+			var max_top = win_height - box.offsetHeight;
+			var max_left = win_width - box.offsetWidth;
+			var x = 1;
+			var y= 1;
+			timer = setInterval(run,4)
+			// 定时器内run函数
+			function run(){			
+				// 获得旧的left和top值
+				var old_left = box.offsetLeft;
+				var old_top = box.offsetTop;
+				// 计算新的left和top
+				var new_left = old_left +x;
+				var new_top = old_top +y;
+				// 将新值赋值回去
+				box.style.left = new_left+'px';
+				box.style.top = new_top+'px';
+				// 判断碰到四边，碰到的话，x方向把x值取反，y方向把y取反；
+				if(new_top == max_top){
+					y = -1;
+				}
+				if(new_top == 0){
+					y = 1;
+				}
+				if(new_left == max_left){
+					x = -1;
+				}
+				if(new_left ==0){
+					x = 1;
+				}
+			}
+			// 定时器结束
+			// 给box加移入事件
+			box.onmouseover = function(){
+				clearInterval(timer)
+			}
+			// 鼠标移出
+			box.onmouseout = function(){
+				// 恢复定时器 
+				timer = setInterval(run,4)
+			}
+			// 点击关闭
+			close.onclick = function(){
+				box.style.display = 'none';
+			}
+			// 窗口改变事件
+			window.onresize = function(){
+				// 让广告归位
+				box.style.left = 0;
+				box.style.top = 0;
+				x = 1;
+				y = 1;
+				win_height = document.documentElement.clientHeight;
+				win_width = document.documentElement.clientWidth;
+				// 计算可以到达的最大top和left值；		
+				max_top = win_height - box.offsetHeight;
+				max_left = win_width - box.offsetWidth;		 
+			}
+		}
+	</script>
+</head>
+<body>
+	 <div id="box"><div id="close"></div></div>
+</body>
+</html>
